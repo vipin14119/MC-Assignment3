@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Assignment3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="name_placeholder">Enter Your Name</string>
+    <string name="email_placeholder">Enter Your Email</string>
+    <string name="preference_file_key">Assigment3 file</string>
+    <string name="score">Score</string>
+    <string name="def_score">Def Score</string>
+</resources>
