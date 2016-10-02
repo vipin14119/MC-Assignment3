@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity
     private boolean canR, canW;
     public static String preference_file = "MySharedFile";
     SharedPreferences someData;
+    MyDBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+//        dbHandler = new MyDBHandler(this, null, null, 1);
+//        printDatabase();
         someData = getSharedPreferences(preference_file, MODE_PRIVATE);
 
 
@@ -99,6 +102,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
 
     @Override
     public void onBackPressed() {
