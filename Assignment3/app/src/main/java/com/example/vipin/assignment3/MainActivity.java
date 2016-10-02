@@ -1,6 +1,7 @@
 package com.example.vipin.assignment3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity
     private EditText m_data;
     private TextView m_write;
     private TextView m_read;
-    private Spinner spinner;    
+    private Spinner spinner;
     private String [] paths = {"Music", "Pictures", "Download"};
     private File path = null;
     private File file = null;
@@ -137,13 +138,13 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        if (id == R.id.nav_task_home) {
+            Intent intent = new Intent(this, TaskHomeActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_profile) {
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_account_setting) {
 
         } else if (id == R.id.nav_share) {
 

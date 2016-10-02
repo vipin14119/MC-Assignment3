@@ -18,6 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_profile_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TaskActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_task_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TaskHomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_task_home_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
