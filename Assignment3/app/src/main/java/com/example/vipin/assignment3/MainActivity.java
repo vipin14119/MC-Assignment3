@@ -58,8 +58,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        dbHandler = new MyDBHandler(this, null, null, 1);
-//        printDatabase();
         someData = getSharedPreferences(preference_file, MODE_PRIVATE);
 
 
@@ -149,7 +147,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_account_setting) {
-
+            Intent intent = new Intent(this, SettingActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -173,30 +172,6 @@ public class MainActivity extends AppCompatActivity
         }
         catch (Exception e){
             e.printStackTrace();
-        }
-    }
-    public String showData(){
-        String collected = null;
-        FileInputStream fis = null;
-        try{
-            fis = openFileInput(FILENAME);
-            byte [] dataArray = new byte[fis.available()];
-            while (fis.read(dataArray) != -1){
-                collected = new String(dataArray);
-            }
-            return collected;
-        } catch (IOException e){
-            e.printStackTrace();
-            return null;
-        }
-        finally {
-            try{
-                assert fis != null;
-                fis.close();
-            }
-            catch (IOException e){
-                e.printStackTrace();
-            }
         }
     }
     public boolean isExternalWritable(){
@@ -247,40 +222,7 @@ public class MainActivity extends AppCompatActivity
         }
         return file;
     }
-    public void loadData(){
-        String data = showData();
-        if (data == null){
-            Toast.makeText(getApplicationContext(), "No Data to Load", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            m_data = (EditText)findViewById(R.id.data);
-            m_data.setText(data);
-            Toast.makeText(getApplicationContext(), "Data Loaded", Toast.LENGTH_SHORT).show();
-        }
-    }
-    public void saveData(View view){
-        FileOutputStream fos;
-        m_email = (EditText)findViewById(R.id.email);
-        String email = m_email.getText().toString();
 
-        m_name = (EditText)findViewById(R.id.name);
-        String name = m_name.getText().toString();
-
-        try{
-            fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
-            fos.write(name.getBytes());
-            fos.write(email.getBytes());
-            fos.close();
-            Snackbar.make(view, "Data Written to Internal File", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            loadData();
-        }
-        catch (IOException e){
-            e.printStackTrace();
-            Snackbar.make(view, "SomeThing Went Wrong", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-        }
-
-
-    }
     public void onClickLoad(View view){
         someData = getSharedPreferences(preference_file, MODE_PRIVATE);
         String name_returned = someData.getString("my_name", "Enter Your Name");

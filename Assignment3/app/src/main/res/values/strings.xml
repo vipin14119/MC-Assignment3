@@ -8,6 +8,7 @@
     <string name="title_profile_activity">Profile</string>
     <string name="title_task_activity">Task</string>
     <string name="title_task_home_activity">All Tasks</string>
+    <string name="title_setting_activity">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="name_placeholder">Enter Your Name</string>
